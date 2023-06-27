@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: main
+
+# override permissions for all Jobs to allow OIDC auth with AWS
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  assets:
+    # This job uses the assets environment, so AWS_ROLE=AssetsRoleArn.
+    environment: assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          # This is an Org-level variable you can always assume exists
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_ROLE }}
+
+      # Sets up everything needed for platform and stackctl commands to work
+      - id: setup
+        uses: freckle/setup-platform-action@v7
+        with:
+          # This is an Org-level secret you can always assume exists
+          token: ${{ secrets.FRECKLE_AUTOMATION_GITHUB_TOKEN }}
+
+      - run: platform assets:push --tag "${{ steps.setup.outputs.tag }}"
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: assets
+
+    strategy:
+      matrix:
+        env:
+          - dev
+      fail-fast: false
+
+    # This job will deploy each "env" in the matrix, for now just dev, so we'll
+    # have AWS_ROLE=CIRoleArn from the dev-iam Stack.
+    environment: ${{ matrix.env }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_ROLE }}
+
+      # Same setup, but include environment. We've decided to name our GitHub
+      # environments the same as the Platform ones to simplify this, but you
+      # could also put a vars.PLATFORM_ENVIRONMENT in the GitHub environment to
+      # use here.
+      - id: setup
+        uses: freckle/setup-platform-action@v7
+        with:
+          token: ${{ secrets.FRECKLE_AUTOMATION_GITHUB_TOKEN }}
+          environment: ${{ matrix.env }}
+
+      - run: platform deploy --tag "${{ steps.setup.outputs.tag }}" --no-confirm
