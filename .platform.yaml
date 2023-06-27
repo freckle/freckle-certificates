@@ -1,0 +1,12 @@
+required_version: =~ 3
+
+environments:
+  dev:
+  prod:
+
+resources:
+  - name: site
+    uses: static
+    platform:
+      assets:
+        dist: _site
