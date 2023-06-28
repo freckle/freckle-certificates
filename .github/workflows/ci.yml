@@ -42,7 +42,7 @@ jobs:
           - dev
       fail-fast: false
 
-    # This job will deploy each "env" in the matrix, for now just dev, so we'll
+    # This job will deploy each "env" in the matrix, for now just dev, so we will
     # have AWS_ROLE=CIRoleArn from the dev-iam Stack.
     environment: ${{ matrix.env }}
 
