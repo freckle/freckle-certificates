@@ -40,6 +40,7 @@ jobs:
       matrix:
         env:
           - dev
+          - prod
       fail-fast: false
 
     # This job will deploy each "env" in the matrix, for now just dev, so we will
