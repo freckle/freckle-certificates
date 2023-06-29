@@ -7,7 +7,8 @@ environments:
 resources:
   - name: site
     uses: static
-    subDomain: freckle-certificates
+    with:
+      subDomain: freckle-certificates
     platform:
       assets:
         dist: _site
