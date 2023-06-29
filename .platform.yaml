@@ -5,7 +5,7 @@ environments:
   prod:
 
 resources:
-  - name: site
+  - name: site2
     uses: static
     subDomain: freckle-certificates
     platform:
