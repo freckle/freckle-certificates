@@ -1,520 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Freckle Certificates HTML Test</title>
-	<style>
-	/* var */
-		:root {
-	  		--blue: #2e95d2;
-	  		--pink: #f15c5c;
-			--green: #00a38f;
-			--font1: 'Nunito';
-			--font2: 'Effra';
-		}
-		html{margin: 0; padding: 0;}
-		body{position:relative; margin: 0; padding: 0; font-family: var(--font1);
-			-webkit-print-color-adjust: exact !important;
-			color-adjust: exact !important;
-			print-color-adjust: exact !important;}
-		main{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-
-	/* Typography */
-		h1{font-family: var(--font1), sans-serif; margin: 0}
-		h2{font-family: var(--font1), sans-serif; font-size: 34px; text-align: center;font-weight:700; margin: 0}
-		h3{font-family: var(--font1), sans-serif; font-size: 20px; text-align: center;font-weight: 700; margin: 0}
-		p{margin: 0}
-
-	/* header */
-		header{display: flex; justify-content: flex-start; align-items: center;  height:40px; padding: 0 10px; background-color: white; box-shadow: 0 2px 3px rgba(0,0,0,0.3)}
-		header > figure{margin: 0;}
-
-	/* Menu SVG */
-		.certificate-menu .menu-svg{background-size: contain; background-repeat: no-repeat;}
-		#cert-1-menu .menu-svg {background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_work.svg")}
-		#cert-2-menu .menu-svg {background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_progress.svg")}
-		#cert-3-menu .menu-svg {background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-questions_answered.svg")}
-		#cert-4-menu .menu-svg {background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-minutes_practiced.svg")}
-		#cert-5-menu .menu-svg {background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-accuracy.svg")}
-		#cert-6-menu .menu-svg {background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-weekly_goal.svg")}
-
-	/* menu */
-		h1.page-title{ margin-bottom:2%; padding-top: 4%}
-		.menu-section{width:10.5in;}
-		.certificate-menu{display: grid; grid-template-columns:1fr 1fr 1fr; padding: 0}
-		.certificate-menu li{display: flex; justify-content: center; list-style: none; box-sizing: border-box; padding: 1%; margin: 20px 0}
-		.certificate-menu li figure{ width: 180px; height: 140px; display: block; background-color: white; border:5px solid transparent; border-radius: 5px; margin: 0 0 5px 0; box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.5)}
-		.certificate-menu li figure:hover{border:5px solid var(--green);border-radius: 5px; animation: wiggle 600ms ease-in-out}
-		.menu-iteme-container{display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;}
-
-	/* print bar */
-		.bottom-bar{box-sizing: border-box; background-color: black; color:white; width: 100vw;  height: 60px ;padding: 2%; display: flex; justify-content: flex-end; align-items: center;}
-		.bottom-bar > p {padding: 2%; }
-		.bottom-bar.-fixed{position: fixed; bottom: 0; left: 0; z-index:1000;}
-		.bottom-bar button{display: flex; justify-content: space-between; align-items: center; border-radius: 5px; padding: 5px; font-weight: bold;}
-		.bottom-bar button > *{padding: 0 4px;}
-		.bottom-bar button:hover{cursor: pointer;}
-
-	/* fields etc*/
-		.hidden-text{font-size: 0;}
-		.cert-frame{ position: relative; background-color: white; box-sizing: border-box; width:10.5in; height: 8.0in; background-repeat: no-repeat; background-size: contain; background-position: center; page-break-after: always; break-after: always;}
-		@-moz-document url-prefix() {.cert-frame{width:1008px; height: 768px;break-after: page;}}
-		.form-group{width: 240px; height: 50px;position: absolute; display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
-		.date-group{position: absolute; left:170px; top: 590px; }
-		.from-group{position: absolute; left:600px; top: 590px;}
-		.-editable{display: flex; justify-content: center; align-items: center;}
-		.-editable:focus,.-editable:active {background-color:transparent;}
-		.cert-center{position:absolute; width: 100%; left: 0px; display: flex; justify-content: center; align-items: flex-start;}
-		.certified{width: 100%; height: 30px; font-size: 22px; text-align: center; font-weight: 400;}
-		.copyright{font-size: 9px; position: absolute; top:690px; left: 140px;color: grey}
-		.cert-frame input{border:none; border-block-style: none; font-family: var(--font1)}
-		.cert-bg{position: absolute; top:0; left:0;  width:10.5in; height: 8.0in;}
-		.spacer{height: 50px;}
-		.-pointer-true{cursor: pointer;}
-
-/* Certificate SVG */
-	/* English */
-		#cert-1{background-image: url("certificate-art/Freckle-certificates-letter-v1-great_work.svg")}
-		#cert-2{background-image: url("certificate-art/Freckle-certificates-letter-v1-great_progress.svg")}
-		#cert-5{background-image: url("certificate-art/Freckle-certificates-letter-v1-accuracy.svg")}
-	/* Spanish */
-		#cert-1-esp{background-image: url("certificate-art/Freckle-certificates-letter-v1-great_work-esp.svg")}
-		#cert-2-esp{background-image: url("certificate-art/Freckle-certificates-letter-v1-great_progress-esp.svg")}
-		#cert-5-esp{background-image: url("certificate-art/Freckle-certificates-letter-v1-accuracy-esp.svg")}
-	/* Shared */
-		#cert-3, #cert-3-esp{background-image: url("certificate-art/Freckle-certificates-letter-v1-questions_answered.svg")}
-		#cert-4, #cert-4-esp{background-image: url("certificate-art/Freckle-certificates-letter-v1-minutes_practiced.svg")}
-		#cert-6, #cert-6-esp{background-image: url("certificate-art/Freckle-certificates-letter-v1-weekly_goal.svg")}
-
-/* Certificate Order*/
-		#cert-1{order: 2}
-		#cert-2{order: 3}
-		#cert-3{order: 4}
-		#cert-4{order: 5}
-		#cert-5{order: 6}
-		#cert-6{order: 7}
-		#cert-1-esp{order: 8}
-		#cert-2-esp{order: 9}
-		#cert-3-esp{order: 10}
-		#cert-4-esp{order: 11}
-		#cert-5-esp{order: 12}
-		#cert-6-esp{order: 13}
-	/* #cert-1 */
-		.cert-frame.-c1 .cert-center.-f1{height:0px; top:0px;}
-		.cert-frame.-c1 .cert-center.-f2{top:305px;}
-		.cert-frame.-c1 .cert-center.-f3{top:400px;}
-		.cert-frame.-c1 .cert-center.-f4{top:450px;}
-		.cert-frame.-c1 h2{color: var(--green); font-size: 30px;}
-		.cert-frame.-c1 h3{color: var(--green);}
-		.cert-frame.-c1 .subject{width: 700px; font-size: 50px; text-align: center;font-weight: 700;min-height: 50px;}
-		.cert-frame.-c1 .to-label{font-family: var(--font2); color: var(--green); position:absolute; top:293px; left: 114px;font-size: 18px; text-align: center;font-weight:
-		 700;transform: rotate(-10deg)}
-		.cert-frame.-c1 .student-name{ width: 600px; font-size: 40px; text-align: center; font-weight: 700; min-height: 40px;}
-		.cert-frame.-c1 .award-for{width: 600px;}
-
-	/* #cert-2 */
-		.cert-frame.-c2 .cert-center.-f1{height:0px; top:0px;}
-		.cert-frame.-c2 .cert-center.-f2{top:322px;}
-		.cert-frame.-c2 .cert-center.-f3{top:420px;}
-		.cert-frame.-c2 .cert-center.-f4{top:454px;}
-		.cert-frame.-c2 h2{color: var(--pink);font-size: 30px;}
-		.cert-frame.-c2 h3{color: var(--pink);}
-		.cert-frame.-c2 .subject{width: 700px; font-size: 50px; text-align: center;font-weight: 700;min-height: 50px;}
-		.cert-frame.-c2 .to-label{font-family: var(--font2); color: var(--pink); position:absolute; top:302px; width: 100%; font-size: 18px; text-align: center; font-weight: 700;}
-		.cert-frame.-c2 .student-name{ width: 600px; font-size: 40px; text-align: center; font-weight: 700;min-height: 40px;}
-		.cert-frame.-c2 .award-for{width: 700px;}
-
-	/* #cert-3 */
-		.cert-frame.-c3 .cert-center.-f1{top:110px;}
-		.cert-frame.-c3 .cert-center.-f2{top:228px;}
-		.cert-frame.-c3 .cert-center.-f3{top:338px;}
-		.cert-frame.-c3 .cert-center.-f4{top:444px;}
-		.cert-frame.-c3 h1{font-size: 50px; color: var(--pink); text-align: center;font-weight: 700;}
-		.cert-frame.-c3 h2{color:black;}
-		.cert-frame.-c3 h3{color: var(--pink);}
-		.cert-frame.-c3 .for-label{font-family: var(--font2);color:white ;position:absolute; top:310px; left:403px;font-size: 30px; text-align: center;display: flex; align-items: center; justify-content: center;font-weight: 700;transform: skewY(-16deg)}
-		.cert-frame.-c3 .award-score{font-family: var(--font1); font-size: 68px;font-weight: 700; text-align: center; width: 130px}
-		.cert-frame.-c3 .subject{ font-size: 60px; font-weight: 900;}
-		.cert-frame.-c3 .subject span.span-large{display: inline-block; transform: translateX(26px)}
-		.cert-frame.-c3 .subject span.span-small{display: inline-block; font-size: 50px; transform: translateY(-37px)}
-		.cert-frame.-c3 .student-name{font-family: var(--font1); width: 700px; font-size: 50px; text-align: center; font-weight: 700;min-height: 50px;}
-		/* spanish */
-		#cert-3-esp .for-label{ top:310px; left:399px;}
-		#cert-3-esp .subject span.span-large{transform: translateX(96px)}
-		#cert-3-esp .subject span.span-small{font-size: 46px;}
-
-	/* #cert-4 */
-		.cert-frame.-c4 .cert-center.-f1{top:110px;}
-		.cert-frame.-c4 .cert-center.-f2{top:228px;}
-		.cert-frame.-c4 .cert-center.-f3{top:338px;}
-		.cert-frame.-c4 .cert-center.-f4{top:444px;}
-		.cert-frame.-c4 h1{font-size: 50px; color: var(--blue); text-align: center;font-weight: 700;}
-		.cert-frame.-c4 h2{color: black;}
-		.cert-frame.-c4 h3{color: var(--blue);}
-		.cert-frame.-c4 .for-label{font-family: var(--font2);color: white;position:absolute; top:310px; left:402px;font-size: 30px; text-align: center;display: flex; align-items: center;justify-content: center;font-weight: 700;transform: skewY(-16deg)}
-		.cert-frame.-c4 .award-score{font-family: var(--font1); font-size: 68px;font-weight: 700; text-align: center; width: 130px}
-		.cert-frame.-c4 .subject{ font-size: 60px; font-weight: 900;}
-		.cert-frame.-c4 .subject span.span-large{display: inline-block; transform: translateX(96px)}
-		.cert-frame.-c4 .subject span.span-small{display: inline-block; font-size: 50px; transform: translateY(-37px)}
-		.cert-frame.-c4 .student-name{font-family: var(--font1); width: 700px; font-size: 50px; text-align: center; font-weight: 700;min-height: 50px;}
-		/* spanish */
-		#cert-4-esp .for-label{ top:310px; left:399px;}
-		#cert-4-esp .subject span.span-large{transform: translateX(152px)}
-		#cert-4-esp .subject span.span-small{font-size: 46px;}
-
-	/* #cert-5 */
-		.cert-frame.-c5 .cert-center.-f1{top:0px;}
-		.cert-frame.-c5 .cert-center.-f2{top:300px;}
-		.cert-frame.-c5 .cert-center.-f3{top:413px;}
-		.cert-frame.-c5 .cert-center.-f4{top:510px;}
-		.cert-frame.-c5 h1{}
-		.cert-frame.-c5 h2{color: black;}
-		.cert-frame.-c5 h3{color: var(--green);}
-		.cert-frame.-c5 .for-label{font-family: var(--font2);color: white;position:absolute; top:286px; left:402px;font-size: 30px; text-align: center;display: flex; align-items: center;justify-content: center;font-weight: 700;transform: skewY(-16deg)}
-		.cert-frame.-c5 .award-for-label{font-family: var(--font1); font-size: 38px; font-weight: 900; color: var(--blue)}
-		.cert-frame.-c5 .award-for-label span:first-child{display: inline-block; transform: translateX(-40px)}
-		.cert-frame.-c5 .award-for-label span:last-child{display:inline-block;  transform: translateX(120px)}
-		.cert-frame.-c5 .award-score{font-family: var(--font1); font-size: 60px;font-weight: 700; text-align: center; width: 130px; transform: translateY(-14px)}
-		.cert-frame.-c5 .subject{font-family: var(--font1);width: 750px; font-size: 50px; text-align: center; font-weight: 900;min-height: 50px;}
-		.cert-frame.-c5 .student-name{font-family: var(--font1); width: 600px; font-size: 40px; text-align: center; font-weight: 900;min-height: 40px;}
-		.cert-frame.-c5 .date-group{top: 600px; }
-		.cert-frame.-c5 .from-group{top: 600px;}
-		.cert-frame.-c5 .copyright{top:710px; left: 90px;color: grey}
-		/* spanish */
-		#cert-5-esp .award-for-label{font-size: 36px;}
-		#cert-5-esp .award-for-label span:first-child{display: inline-block; transform: translateX(-13px)}
-		#cert-5-esp .award-for-label span:last-child{display:inline-block;  transform: translateX(144px)}
-
-	/* #cert-6 */
-		.cert-frame.-c6 .cert-center.-f1{top:111px;}
-		.cert-frame.-c6 .cert-center.-f2{top:210px;}
-		.cert-frame.-c6 .cert-center.-f3{top:342px;}
-		.cert-frame.-c6 .cert-center.-f4{top:445px;}
-		.cert-frame.-c6 h1{font-size: 50px; color: var(--pink) ;text-align: center;font-weight: 700;}
-		.cert-frame.-c6 h2{color: black;}
-		.cert-frame.-c6 h3{color: var(--green);}
-		.cert-frame.-c6 .for-label{font-family: var(--font2);color: white;position:absolute; top:295px; left:483px;font-size: 30px; text-align: center;display: flex; align-items: center;justify-content: center;font-weight: 700;transform: skewY(-16deg)}
-		.cert-frame.-c6 .award-for{display: inline-block; font-family: var(--font1); font-size: 40px;font-weight: 700; text-align: center;color: var(--blue);transform: translateX(55px)}
-		.cert-frame.-c6 .subject{font-family: var(--font1);width: 700px; font-size: 50px; text-align: center; font-weight: 900;min-height: 50px;}
-		.cert-frame.-c6 .student-name{font-family: var(--font1); width: 700px; font-size: 40px; text-align: center; font-weight: 700;min-height: 40px;}
-		/* spanish */
-		#cert-6-esp .for-label{ top:295px; left:481px;}
-
-
-	/* ani */
-	@keyframes wiggle{
-		0%{transform: rotate(0deg)}
-		50%{transform: rotate(4deg)}
-		9%{transform: rotate(-2deg)}
-		100%{transform: rotate(0deg)}
-	}
-	/* media */
-		@media screen {
-			body{background: #f4f4f4;}
-			input.-editable{background-color: rgba(220, 220, 220, 0.3);;}
-			.cert-frame{box-shadow: 3px 3px 2px #ddd;border: 1px solid #eee; margin-bottom: 40px;}
-			#menu.cert-frame{ height: auto; box-shadow: none; border: transparent;}
-		}
-		@media print {
-			.cert-frame{ margin-top: 5px;}
-			input.-editable{background-color: transparent !important}
-			@page { size: landscape; margin: 0;}
-			.-no-print{display: none !important;}
-				::-webkit-input-placeholder { /* WebKit browsers */
-				color: transparent;
-			}
-			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-				color: transparent;
-			}
-			::-moz-placeholder { /* Mozilla Firefox 19+ */
-				color: transparent;
-			}
-			:-ms-input-placeholder { /* Internet Explorer 10+ */
-				color: transparent;
-			}
-		}
-
-	</style>
-	<script>
-		function showIt(elementId) {
-			var el = document.getElementById(elementId);
-			el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			return false;
-		}
-	</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Freckle Certificates</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+      function showIt(elementId) {
+        var el = document.getElementById(elementId);
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return false;
+      }
+    </script>
   </head>
   <body>
-	<header class="-no-print">
-  		<figure>logo</figure>
-	</header>
-	<div id="printBar" class="bottom-bar -fixed -no-print">
-		<p>Printing works best in the Chrome browser.</p>
-		<button onclick="window.print();return false;" type="button" name="print">Print <svg id="icon-print" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 80 75.47"><path d="m78.52,34.45c.99.99,1.48,2.16,1.48,3.52v20c0,1.35-.5,2.53-1.48,3.52-.99.99-2.16,1.48-3.52,1.48h-12.5v12.5H17.5v-12.5H5c-1.35,0-2.53-.49-3.52-1.48-.99-.99-1.48-2.16-1.48-3.52v-20c0-1.35.49-2.53,1.48-3.52s2.16-1.48,3.52-1.48h70c1.35,0,2.53.5,3.52,1.48Zm-16.02-3.98H17.5V0h45v30.47ZM20,2.5v25.47h40V2.5H20Zm37.5,50.47H22.5v17.5h35v-17.5Zm17.73-15c-.68-.68-1.59-1.02-2.73-1.02s-2.06.3-2.73.9c-.68.6-1.02,1.47-1.02,2.62s.34,2.06,1.02,2.73c.68.68,1.59,1.02,2.73,1.02s2.06-.38,2.73-1.13c.68-.75,1.02-1.63,1.02-2.62s-.34-1.82-1.02-2.5Z"/></svg></button>
-	</div>
+    <header class="-no-print">
+      <figure>
+        <img
+          src="freckle-logo-standard.svg"
+          alt="Freckle"
+          style="width: 100%"
+        />
+      </figure>
+    </header>
 
-	<main>
-		<div id="menu" class="menu-section -no-print">
-			<h1 class="page-title">Freckle Certificates</h1>
-			<ul class="certificate-menu" role="menu">
-				<li id="cert-1-menu" role="menuitem">
-					<div class="menu-iteme-container">
-						<figure aria-label="Printable certificate for 'Great Work'" class="menu-svg -pointer-true" onclick="showIt('cert-1')"></figure>
-						<p> <span class="-pointer-true" onclick="showIt('cert-1')" >English</span> | <span class="-pointer-true" onclick="showIt('cert-1-esp')">Español</span></p>
-					</div>
-				</li>
-				<li id="cert-2-menu" role="menuitem">
-					<div class="menu-iteme-container">
-						<figure aria-label="Printable certificate for 'Great Progress'" class="menu-svg -pointer-true" onclick="showIt('cert-2')"></figure>
-						<p ><span class="-pointer-true" onclick="showIt('cert-2')">English</span> | <span class="-pointer-true" onclick="showIt('cert-2-esp')">Español</span></p>
-					</div>
-				</li>
-				<li id="cert-3-menu" role="menuitem">
-					<div class="menu-iteme-container">
-						<figure aria-label="Printable certificate of 'Questions answered correctly!'" class="menu-svg -pointer-true" onclick="showIt('cert-3')"></figure>
-						<p ><span class="-pointer-true" onclick="showIt('cert-3')">English</span> | <span class="-pointer-true" onclick="showIt('cert-3-esp')">Español</span></p>
-					</div>
-				</li>
-				<li id="cert-4-menu" role="menuitem">
-					<div class="menu-iteme-container">
-						<figure aria-label="Printable certificate of 'Minutes Practing'" class="menu-svg -pointer-true" onclick="showIt('cert-4')"></figure>
-						<p><span class="-pointer-true" onclick="showIt('cert-4')">English</span> | <span class="-pointer-true" onclick="showIt('cert-4-esp')">Español</span></p>
-					</div>
-				</li>
-				<li id="cert-5-menu" role="menuitem">
-					<div class="menu-iteme-container">
-						<figure aria-label="Printable certificate of 'Accuracy'" class="menu-svg -pointer-true" onclick="showIt('cert-5')"></figure>
-						<p><span class="-pointer-true" onclick="showIt('cert-5')">English</span> | <span class="-pointer-true" onclick="showIt('cert-5-esp')">Español</span></p>
-					</div>
-				</li>
-				<li id="cert-6-menu" role="menuitem">
-					<div class="menu-iteme-container">
-						<figure aria-label="Printable certificate of 'Weekly Goal'" class="menu-svg -pointer-true" onclick="showIt('cert-6')"></figure>
-						<p><span class="-pointer-true" onclick="showIt('cert-6')">English</span> | <span class="-pointer-true" onclick="showIt('cert-6-esp')">Español</span></p>
-					</div>
-				</li>
+    <main>
+      <div id="menu" class="menu-section -no-print">
+        <div class="title-section">
+          <h1 class="page-title">Freckle Certificates</h1>
+          <div class="print-all -no-print">
+            <button
+              onclick="window.print();return false;"
+              type="button"
+              name="print"
+              class="print-all-button"
+            >
+              <span color="print-all-span">
+                <span class="icon-span">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="print"
+                    class="svg-inline--fa fa-print fa-w-16"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+                    ></path>
+                  </svg>
+                </span>
+                Print all
+              </span>
+            </button>
+          </div>
+        </div>
+        <ul class="certificate-menu" role="menu">
+          <li id="cert-1-menu" role="menuitem">
+            <div class="menu-iteme-container">
+              <figure
+                aria-label="Printable certificate for 'Great Work'"
+                class="menu-svg -pointer-true"
+                onclick="showIt('cert-1')"
+              ></figure>
+              <p>
+                <span class="-pointer-true" onclick="showIt('cert-1')"
+                  >English</span
+                >
+                |
+                <span class="-pointer-true" onclick="showIt('cert-1-esp')"
+                  >Español</span
+                >
+              </p>
+            </div>
+          </li>
+          <li id="cert-2-menu" role="menuitem">
+            <div class="menu-iteme-container">
+              <figure
+                aria-label="Printable certificate for 'Great Progress'"
+                class="menu-svg -pointer-true"
+                onclick="showIt('cert-2')"
+              ></figure>
+              <p>
+                <span class="-pointer-true" onclick="showIt('cert-2')"
+                  >English</span
+                >
+                |
+                <span class="-pointer-true" onclick="showIt('cert-2-esp')"
+                  >Español</span
+                >
+              </p>
+            </div>
+          </li>
+          <li id="cert-3-menu" role="menuitem">
+            <div class="menu-iteme-container">
+              <figure
+                aria-label="Printable certificate of 'Questions answered correctly!'"
+                class="menu-svg -pointer-true"
+                onclick="showIt('cert-3')"
+              ></figure>
+              <p>
+                <span class="-pointer-true" onclick="showIt('cert-3')"
+                  >English</span
+                >
+                |
+                <span class="-pointer-true" onclick="showIt('cert-3-esp')"
+                  >Español</span
+                >
+              </p>
+            </div>
+          </li>
+          <li id="cert-4-menu" role="menuitem">
+            <div class="menu-iteme-container">
+              <figure
+                aria-label="Printable certificate of 'Minutes Practing'"
+                class="menu-svg -pointer-true"
+                onclick="showIt('cert-4')"
+              ></figure>
+              <p>
+                <span class="-pointer-true" onclick="showIt('cert-4')"
+                  >English</span
+                >
+                |
+                <span class="-pointer-true" onclick="showIt('cert-4-esp')"
+                  >Español</span
+                >
+              </p>
+            </div>
+          </li>
+          <li id="cert-5-menu" role="menuitem">
+            <div class="menu-iteme-container">
+              <figure
+                aria-label="Printable certificate of 'Accuracy'"
+                class="menu-svg -pointer-true"
+                onclick="showIt('cert-5')"
+              ></figure>
+              <p>
+                <span class="-pointer-true" onclick="showIt('cert-5')"
+                  >English</span
+                >
+                |
+                <span class="-pointer-true" onclick="showIt('cert-5-esp')"
+                  >Español</span
+                >
+              </p>
+            </div>
+          </li>
+          <li id="cert-6-menu" role="menuitem">
+            <div class="menu-iteme-container">
+              <figure
+                aria-label="Printable certificate of 'Weekly Goal'"
+                class="menu-svg -pointer-true"
+                onclick="showIt('cert-6')"
+              ></figure>
+              <p>
+                <span class="-pointer-true" onclick="showIt('cert-6')"
+                  >English</span
+                >
+                |
+                <span class="-pointer-true" onclick="showIt('cert-6-esp')"
+                  >Español</span
+                >
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Certificate-1 -->
+      <!-- English -->
+      <div id="cert-1" class="cert-frame -c1">
+        <div class="cert-center -f1">
+          <h1 class="hidden-text">Great Work</h1>
+        </div>
+        <p class="to-label">Awarded to</p>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Student Name"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <div class="cert-center -f3">
+          <h2 class="award-for">You mastered a level in:</h2>
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="subject mastered" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
+      <!-- Spanish -->
+      <div id="cert-1-esp" class="cert-frame -c1">
+        <div class="cert-center -f1">
+          <h1 class="hidden-text">Buen Trabajo</h1>
+        </div>
+        <p class="to-label">Otorgado a</p>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Nombre del alumno"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <div class="cert-center -f3">
+          <h2 class="award-for">Dominaste un nivel en:</h2>
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="subject mastered" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
 
-			</ul>
-		</div>
-<!-- Certificate-1 -->
-<!-- English -->
-		<div id="cert-1" class="cert-frame -c1">
-			<div class="cert-center -f1"><h1 class="hidden-text">Great Work</h1></div>
-			<p class="to-label">Awarded to</p>
-			<div class="cert-center -f2"><input placeholder="Student Name" aria-label="To student" class="student-name -editable"  ></div>
-			<div class="cert-center -f3"><h2 class="award-for">You mastered a level in:</h2></div>
-			<div class="cert-center -f4"><input aria-label="subject mastered" class="subject -editable"  ></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-<!-- Spanish -->
-		<div id="cert-1-esp" class="cert-frame -c1">
-			<div class="cert-center -f1"><h1 class="hidden-text">Buen Trabajo</h1></div>
-			<p class="to-label">Otorgado a</p>
-			<div class="cert-center -f2"><input placeholder="Nombre del alumno" aria-label="To student" class="student-name -editable"  ></div>
-			<div class="cert-center -f3"><h2 class="award-for">Dominaste un nivel en:</h2></div>
-			<div class="cert-center -f4"><input aria-label="subject mastered" class="subject -editable"  ></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
+      <!-- Certificate-2 -->
+      <!-- English -->
+      <div id="cert-2" class="cert-frame -c2">
+        <div class="cert-center -f1">
+          <h1 class="hidden-text">Great Progress</h1>
+        </div>
+        <p class="to-label">Awarded to</p>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Student Name"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <div class="cert-center -f3">
+          <h2 class="award-for">You mastered a level in:</h2>
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="subject mastered" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
+      <!-- Spanish -->
+      <div id="cert-2-esp" class="cert-frame -c2">
+        <div class="cert-center -f1">
+          <h1 class="hidden-text">Gran Progreso</h1>
+        </div>
+        <p class="to-label">Otorgado a</p>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Nombre del alumno"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <div class="cert-center -f3">
+          <h2 class="award-for">Dominaste un nivel en:</h2>
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="subject mastered" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
 
-<!-- Certificate-2 -->
-<!-- English -->
-		<div id="cert-2" class="cert-frame -c2">
-			<div class="cert-center -f1"><h1 class="hidden-text">Great Progress</h1></div>
-			<p class="to-label">Awarded to</p>
-			<div class="cert-center -f2"><input placeholder="Student Name" aria-label="To student" class="student-name -editable"></div>
-			<div class="cert-center -f3"><h2 class="award-for" >You mastered a level in:</h2></div>
-			<div class="cert-center -f4"><input aria-label="subject mastered" class="subject -editable"  > </div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-<!-- Spanish -->
-		<div id="cert-2-esp" class="cert-frame -c2">
-			<div class="cert-center -f1"><h1 class="hidden-text">Gran Progreso</h1></div>
-			<p class="to-label">Otorgado a</p>
-			<div class="cert-center -f2"><input placeholder="Nombre del alumno" aria-label="To student" class="student-name -editable"></div>
-			<div class="cert-center -f3"><h2 class="award-for" >Dominaste un nivel en:</h2></div>
-			<div class="cert-center -f4"><input aria-label="subject mastered" class="subject -editable"  > </div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
+      <!-- Certificate-3 -->
+      <!-- English -->
+      <div id="cert-3" class="cert-frame -c3">
+        <div class="cert-center -f1">
+          <h1 class="">This Award is to Recognize</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Student Name"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <p class="for-label">for</p>
+        <div class="cert-center -f3">
+          <input
+            placeholder="##"
+            aria-label="number of questions"
+            class="award-score -editable"
+          />
+        </div>
+        <div class="cert-center -f4">
+          <p class="subject">
+            <span class="span-large">Questions</span><br /><span
+              class="span-small"
+              >answered correctly!</span
+            >
+          </p>
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
+      <!-- Spanish -->
+      <div id="cert-3-esp" class="cert-frame -c3">
+        <div class="cert-center -f1">
+          <h1 class="">Este premio es para reconocer a</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Nombre del alumno"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <p class="for-label">por</p>
+        <div class="cert-center -f3">
+          <input
+            placeholder="##"
+            aria-label="number of questions"
+            class="award-score -editable"
+          />
+        </div>
+        <div class="cert-center -f4">
+          <p class="subject">
+            <span class="span-large">Preguntas</span><br /><span
+              class="span-small"
+              >respondidas correctamente!</span
+            >
+          </p>
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
 
-<!-- Certificate-3 -->
-<!-- English -->
-		<div id="cert-3" class="cert-frame -c3">
-			<div class="cert-center -f1"><h1 class="">This Award is to Recognize</h1></div>
-			<div class="cert-center -f2"><input placeholder="Student Name" aria-label="To student" class="student-name -editable"  ></div>
-			<p class="for-label">for</p>
-			<div class="cert-center -f3"><input placeholder="##" aria-label="number of questions" class="award-score -editable"  ></div>
-			<div class="cert-center -f4"><p class="subject"><span class="span-large">Questions</span><br><span class="span-small">answered correctly!</span></p></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-<!-- Spanish -->
-		<div id="cert-3-esp" class="cert-frame -c3">
-			<div class="cert-center -f1"><h1 class="">Este premio es para reconocer a</h1></div>
-			<div class="cert-center -f2"><input placeholder="Nombre del alumno" aria-label="To student" class="student-name -editable"  ></div>
-			<p class="for-label">por</p>
-			<div class="cert-center -f3"><input placeholder="##" aria-label="number of questions" class="award-score -editable"  ></div>
-			<div class="cert-center -f4"><p class="subject"><span class="span-large">Preguntas</span><br><span class="span-small">respondidas correctamente!</span></p></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-				<input aria-label="Date" class="certified -date -editable"   >
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
+      <!-- Certificate-4 -->
+      <!-- English -->
+      <div id="cert-4" class="cert-frame -c4">
+        <div class="cert-center -f1">
+          <h1 class="">This Award is to Recognize</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Student Name"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <p class="for-label">for</p>
+        <div class="cert-center -f3">
+          <input
+            placeholder="##"
+            aria-label="number of questions"
+            class="award-score -editable"
+          />
+        </div>
+        <div class="cert-center -f4">
+          <p class="subject">
+            <span class="span-large">Minutes</span><br /><span
+              class="span-small"
+              >practicing your skills!</span
+            >
+          </p>
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
+      <!-- Spanish -->
+      <div id="cert-4-esp" class="cert-frame -c4">
+        <div class="cert-center -f1">
+          <h1 class="">Este premio es para reconocer a</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Nombre del alumno"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <p class="for-label">por</p>
+        <div class="cert-center -f3">
+          <input
+            placeholder="##"
+            aria-label="number of questions"
+            class="award-score -editable"
+          />
+        </div>
+        <div class="cert-center -f4">
+          <p class="subject">
+            <span class="span-large">Minutos</span><br /><span
+              class="span-small"
+              >practicando tus habilidades!</span
+            >
+          </p>
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
 
-<!-- Certificate-4 -->
-<!-- English -->
-		<div id="cert-4" class="cert-frame -c4">
-			<div class="cert-center -f1"><h1 class="">This Award is to Recognize</h1></div>
-			<div class="cert-center -f2"><input placeholder="Student Name" aria-label="To student" class="student-name -editable" ></div>
-			<p class="for-label">for</p>
-			<div class="cert-center -f3"><input placeholder="##" aria-label="number of questions" class="award-score -editable"  ></div>
-			<div class="cert-center -f4"><p class="subject"><span class="span-large">Minutes</span><br><span class="span-small">practicing your skills!</span></p></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-<!-- Spanish -->
-		<div id="cert-4-esp" class="cert-frame -c4">
-			<div class="cert-center -f1"><h1 class="">Este premio es para reconocer a</h1></div>
-			<div class="cert-center -f2"><input placeholder="Nombre del alumno" aria-label="To student" class="student-name -editable" ></div>
-			<p class="for-label">por</p>
-			<div class="cert-center -f3"><input placeholder="##" aria-label="number of questions" class="award-score -editable"  ></div>
-			<div class="cert-center -f4"><p class="subject"><span class="span-large">Minutos</span><br><span class="span-small">practicando tus habilidades!</span></p></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
+      <!-- Certificate-5 -->
+      <!-- English  -->
+      <div id="cert-5" class="cert-frame -c5">
+        <div class="cert-center -f1">
+          <h1 class="hidden-text">Amazing Accuracy Award</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Student Name"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <div class="cert-center -f3">
+          <p class="award-for-label">
+            <span>Achieving</span> <span>% accuracy on</span>
+          </p>
+        </div>
+        <div class="cert-center -f3">
+          <input
+            placeholder="##"
+            aria-label="accuracy score"
+            class="award-score -editable"
+          />
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="Topic or subject" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
+      <!-- Spanish -->
+      <div id="cert-5-esp" class="cert-frame -c5">
+        <div class="cert-center -f1">
+          <h1 class="hidden-text">Premio de Exactitud Asombrosa</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Nombre del alumno"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <div class="cert-center -f3">
+          <p class="award-for-label">
+            <span>Lograr un</span><span>% de exactitud en</span>
+          </p>
+        </div>
+        <div class="cert-center -f3">
+          <input
+            placeholder="##"
+            aria-label="accuracy score"
+            class="award-score -editable"
+          />
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="Topic or subject" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
 
-<!-- Certificate-5 -->
-<!-- English  -->
-		<div id="cert-5" class="cert-frame -c5">
-			<div class="cert-center -f1"><h1 class="hidden-text">Amazing Accuracy Award</h1></div>
-			<div class="cert-center -f2"><input placeholder="Student Name" aria-label="To student" class="student-name -editable" ></div>
-			<div class="cert-center -f3"><p class="award-for-label"><span>Achieving</span> <span>% accuracy on</span></p></div>
-			<div class="cert-center -f3"><input placeholder="##" aria-label="accuracy score" class="award-score -editable"  ></div>
-			<div class="cert-center -f4"><input aria-label="Topic or subject" class="subject -editable" ></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-<!-- Spanish -->
-		<div id="cert-5-esp" class="cert-frame -c5">
-			<div class="cert-center -f1"><h1 class="hidden-text">Premio de Exactitud Asombrosa </h1></div>
-			<div class="cert-center -f2"><input placeholder="Nombre del alumno" aria-label="To student" class="student-name -editable" ></div>
-			<div class="cert-center -f3"><p class="award-for-label"><span>Lograr un</span><span>% de exactitud en</span></p></div>
-			<div class="cert-center -f3"><input placeholder="##" aria-label="accuracy score" class="award-score -editable"  ></div>
-			<div class="cert-center -f4"><input aria-label="Topic or subject" class="subject -editable" ></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
+      <!-- Certificate-6 -->
+      <!-- English -->
+      <div id="cert-6" class="cert-frame -c6">
+        <div class="cert-center -f1">
+          <h1 class="">This Award is to Recognize</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Student Name"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <p class="for-label">for</p>
+        <div class="cert-center -f3">
+          <h2 class="award-for">Achieving your weekly goal of</h2>
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="subject mastered" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
+      <!-- Spanish-->
+      <div id="cert-6-esp" class="cert-frame -c6">
+        <div class="cert-center -f1">
+          <h1 class="">Este premio es para reconocer a</h1>
+        </div>
+        <div class="cert-center -f2">
+          <input
+            placeholder="Nombre del alumno"
+            aria-label="To student"
+            class="student-name -editable"
+          />
+        </div>
+        <p class="for-label">por</p>
+        <div class="cert-center -f3">
+          <h2 class="award-for">Alcanzar su meta semanal de</h2>
+        </div>
+        <div class="cert-center -f4">
+          <input aria-label="asignatura dominada" class="subject -editable" />
+        </div>
+        <div class="date-group form-group">
+          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
+          <input aria-label="Date" class="certified -date -editable" />
+        </div>
+        <div class="from-group form-group">
+          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
+          <input aria-label="Signature" class="certified -from -editable" />
+        </div>
+        <p class="copyright" role="contentinfo" aria-label="copyright">
+          ©Copyright 2023 Renaissance Learning
+          <span class="hidden-text">Freckle by Renaissance</span>
+        </p>
+      </div>
 
-<!-- Certificate-6 -->
-<!-- English -->
-		<div id="cert-6" class="cert-frame -c6">
-			<div class="cert-center -f1"><h1 class="">This Award is to Recognize</h1></div>
-			<div class="cert-center -f2"><input placeholder="Student Name" aria-label="To student" class="student-name -editable"  ></div>
-			<p class="for-label">for</p>
-			<div class="cert-center -f3"><h2 class="award-for">Achieving your weekly goal of</h2></div>
-			<div class="cert-center -f4"><input aria-label="subject mastered" class="subject -editable"  ></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Awarded on</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-<!-- Spanish-->
-		<div id="cert-6-esp" class="cert-frame -c6">
-			<div class="cert-center -f1"><h1 class="">Este premio es para reconocer a</h1></div>
-			<div class="cert-center -f2"><input placeholder="Nombre del alumno" aria-label="To student" class="student-name -editable"  ></div>
-			<p class="for-label">por</p>
-			<div class="cert-center -f3"><h2 class="award-for">Alcanzar su meta semanal de</h2></div>
-			<div class="cert-center -f4"><input aria-label="asignatura dominada" class="subject -editable"  ></div>
-			<div class="date-group form-group">
-				<h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-				<input aria-label="Date" class="certified -date -editable">
-			</div>
-			<div class="from-group form-group">
-				<h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-				<input aria-label="Signature" class="certified -from -editable">
-			</div>
-			<p class="copyright" role="contentinfo" aria-label="copyright">©Copyright 2023 Renaissance Learning <span class="hidden-text">Freckle by Renaissance</span></p>
-		</div>
-
-		<div class="spacer -no-print"></div>
-
-	</main>
+      <div class="spacer -no-print"></div>
+    </main>
   </body>
 </html>
