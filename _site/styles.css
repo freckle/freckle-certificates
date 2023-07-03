@@ -93,6 +93,7 @@ header > figure {
   color: white;
   font-family: var(--font1), sans-serif;
   justify-content: center;
+  cursor: pointer;
 }
 .print-all .print-all-span {
   display: flex;
@@ -297,6 +298,17 @@ h1.page-title {
 }
 .-pointer-true {
   cursor: pointer;
+}
+
+.lang-section {
+  margin-top: 5px;
+  color: #c4c8ca;
+}
+
+.lang-links {
+  color: #146eb3;
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
 /* Certificate SVG */
