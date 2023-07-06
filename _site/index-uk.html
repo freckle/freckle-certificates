@@ -7,14 +7,6 @@
     <title>Freckle Certificates</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const countryParam = urlParams.get("country");
-
-      if (countryParam === "uk") {
-        window.location.href = "index-uk.html";
-      } else {
-        window.location.href = "index.html";
-      }
       function showIt(elementId) {
         var el = document.getElementById(elementId);
         el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -76,19 +68,6 @@
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-1')"
               ></figure>
-              <p class="lang-section">
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-1')"
-                  >English</span
-                >
-                |
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-1-esp')"
-                  >Español</span
-                >
-              </p>
             </div>
           </li>
           <li id="cert-2-menu" role="menuitem">
@@ -98,19 +77,6 @@
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-2')"
               ></figure>
-              <p class="lang-section">
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-2')"
-                  >English</span
-                >
-                |
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-2-esp')"
-                  >Español</span
-                >
-              </p>
             </div>
           </li>
           <li id="cert-3-menu" role="menuitem">
@@ -120,19 +86,6 @@
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-3')"
               ></figure>
-              <p class="lang-section">
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-3')"
-                  >English</span
-                >
-                |
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-3-esp')"
-                  >Español</span
-                >
-              </p>
             </div>
           </li>
           <li id="cert-4-menu" role="menuitem">
@@ -142,19 +95,6 @@
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-4')"
               ></figure>
-              <p class="lang-section">
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-4')"
-                  >English</span
-                >
-                |
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-4-esp')"
-                  >Español</span
-                >
-              </p>
             </div>
           </li>
           <li id="cert-5-menu" role="menuitem">
@@ -164,19 +104,6 @@
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-5')"
               ></figure>
-              <p class="lang-section">
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-5')"
-                  >English</span
-                >
-                |
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-5-esp')"
-                  >Español</span
-                >
-              </p>
             </div>
           </li>
           <li id="cert-6-menu" role="menuitem">
@@ -186,19 +113,6 @@
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-6')"
               ></figure>
-              <p class="lang-section">
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-6')"
-                  >English</span
-                >
-                |
-                <span
-                  class="-pointer-true lang-links"
-                  onclick="showIt('cert-6-esp')"
-                  >Español</span
-                >
-              </p>
             </div>
           </li>
         </ul>
@@ -236,38 +150,6 @@
           <span class="hidden-text">Freckle by Renaissance</span>
         </p>
       </div>
-      <!-- Spanish -->
-      <div id="cert-1-esp" class="cert-frame -c1">
-        <div class="cert-center -f1">
-          <h1 class="hidden-text">Buen Trabajo</h1>
-        </div>
-        <p class="to-label">Otorgado a</p>
-        <div class="cert-center -f2">
-          <input
-            placeholder="Nombre del alumno"
-            aria-label="To student"
-            class="student-name -editable"
-          />
-        </div>
-        <div class="cert-center -f3">
-          <h2 class="award-for">Dominaste un nivel en:</h2>
-        </div>
-        <div class="cert-center -f4">
-          <input aria-label="subject mastered" class="subject -editable" />
-        </div>
-        <div class="date-group form-group">
-          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-          <input aria-label="Date" class="certified -date -editable" />
-        </div>
-        <div class="from-group form-group">
-          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-          <input aria-label="Signature" class="certified -from -editable" />
-        </div>
-        <p class="copyright" role="contentinfo" aria-label="copyright">
-          ©Copyright 2023 Renaissance Learning
-          <span class="hidden-text">Freckle by Renaissance</span>
-        </p>
-      </div>
 
       <!-- Certificate-2 -->
       <!-- English -->
@@ -295,38 +177,6 @@
         </div>
         <div class="from-group form-group">
           <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-          <input aria-label="Signature" class="certified -from -editable" />
-        </div>
-        <p class="copyright" role="contentinfo" aria-label="copyright">
-          ©Copyright 2023 Renaissance Learning
-          <span class="hidden-text">Freckle by Renaissance</span>
-        </p>
-      </div>
-      <!-- Spanish -->
-      <div id="cert-2-esp" class="cert-frame -c2">
-        <div class="cert-center -f1">
-          <h1 class="hidden-text">Gran Progreso</h1>
-        </div>
-        <p class="to-label">Otorgado a</p>
-        <div class="cert-center -f2">
-          <input
-            placeholder="Nombre del alumno"
-            aria-label="To student"
-            class="student-name -editable"
-          />
-        </div>
-        <div class="cert-center -f3">
-          <h2 class="award-for">Dominaste un nivel en:</h2>
-        </div>
-        <div class="cert-center -f4">
-          <input aria-label="subject mastered" class="subject -editable" />
-        </div>
-        <div class="date-group form-group">
-          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-          <input aria-label="Date" class="certified -date -editable" />
-        </div>
-        <div class="from-group form-group">
-          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
           <input aria-label="Signature" class="certified -from -editable" />
         </div>
         <p class="copyright" role="contentinfo" aria-label="copyright">
@@ -377,47 +227,6 @@
           <span class="hidden-text">Freckle by Renaissance</span>
         </p>
       </div>
-      <!-- Spanish -->
-      <div id="cert-3-esp" class="cert-frame -c3">
-        <div class="cert-center -f1">
-          <h1 class="">Este premio es para reconocer a</h1>
-        </div>
-        <div class="cert-center -f2">
-          <input
-            placeholder="Nombre del alumno"
-            aria-label="To student"
-            class="student-name -editable"
-          />
-        </div>
-        <p class="for-label">por</p>
-        <div class="cert-center -f3">
-          <input
-            placeholder="##"
-            aria-label="number of questions"
-            class="award-score -editable"
-          />
-        </div>
-        <div class="cert-center -f4">
-          <p class="subject">
-            <span class="span-large">Preguntas</span><br /><span
-              class="span-small"
-              >respondidas correctamente!</span
-            >
-          </p>
-        </div>
-        <div class="date-group form-group">
-          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-          <input aria-label="Date" class="certified -date -editable" />
-        </div>
-        <div class="from-group form-group">
-          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-          <input aria-label="Signature" class="certified -from -editable" />
-        </div>
-        <p class="copyright" role="contentinfo" aria-label="copyright">
-          ©Copyright 2023 Renaissance Learning
-          <span class="hidden-text">Freckle by Renaissance</span>
-        </p>
-      </div>
 
       <!-- Certificate-4 -->
       <!-- English -->
@@ -454,47 +263,6 @@
         </div>
         <div class="from-group form-group">
           <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-          <input aria-label="Signature" class="certified -from -editable" />
-        </div>
-        <p class="copyright" role="contentinfo" aria-label="copyright">
-          ©Copyright 2023 Renaissance Learning
-          <span class="hidden-text">Freckle by Renaissance</span>
-        </p>
-      </div>
-      <!-- Spanish -->
-      <div id="cert-4-esp" class="cert-frame -c4">
-        <div class="cert-center -f1">
-          <h1 class="">Este premio es para reconocer a</h1>
-        </div>
-        <div class="cert-center -f2">
-          <input
-            placeholder="Nombre del alumno"
-            aria-label="To student"
-            class="student-name -editable"
-          />
-        </div>
-        <p class="for-label">por</p>
-        <div class="cert-center -f3">
-          <input
-            placeholder="##"
-            aria-label="number of questions"
-            class="award-score -editable"
-          />
-        </div>
-        <div class="cert-center -f4">
-          <p class="subject">
-            <span class="span-large">Minutos</span><br /><span
-              class="span-small"
-              >practicando tus habilidades!</span
-            >
-          </p>
-        </div>
-        <div class="date-group form-group">
-          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-          <input aria-label="Date" class="certified -date -editable" />
-        </div>
-        <div class="from-group form-group">
-          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
           <input aria-label="Signature" class="certified -from -editable" />
         </div>
         <p class="copyright" role="contentinfo" aria-label="copyright">
@@ -544,46 +312,6 @@
           <span class="hidden-text">Freckle by Renaissance</span>
         </p>
       </div>
-      <!-- Spanish -->
-      <div id="cert-5-esp" class="cert-frame -c5">
-        <div class="cert-center -f1">
-          <h1 class="hidden-text">Premio de Exactitud Asombrosa</h1>
-        </div>
-        <div class="cert-center -f2">
-          <input
-            placeholder="Nombre del alumno"
-            aria-label="To student"
-            class="student-name -editable"
-          />
-        </div>
-        <div class="cert-center -f3">
-          <p class="award-for-label">
-            <span>Lograr un</span><span>% de exactitud en</span>
-          </p>
-        </div>
-        <div class="cert-center -f3">
-          <input
-            placeholder="##"
-            aria-label="accuracy score"
-            class="award-score -editable"
-          />
-        </div>
-        <div class="cert-center -f4">
-          <input aria-label="Topic or subject" class="subject -editable" />
-        </div>
-        <div class="date-group form-group">
-          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-          <input aria-label="Date" class="certified -date -editable" />
-        </div>
-        <div class="from-group form-group">
-          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
-          <input aria-label="Signature" class="certified -from -editable" />
-        </div>
-        <p class="copyright" role="contentinfo" aria-label="copyright">
-          ©Copyright 2023 Renaissance Learning
-          <span class="hidden-text">Freckle by Renaissance</span>
-        </p>
-      </div>
 
       <!-- Certificate-6 -->
       <!-- English -->
@@ -611,38 +339,6 @@
         </div>
         <div class="from-group form-group">
           <h3 aria-label="Awarded by" class="from-label">Awarded by</h3>
-          <input aria-label="Signature" class="certified -from -editable" />
-        </div>
-        <p class="copyright" role="contentinfo" aria-label="copyright">
-          ©Copyright 2023 Renaissance Learning
-          <span class="hidden-text">Freckle by Renaissance</span>
-        </p>
-      </div>
-      <!-- Spanish-->
-      <div id="cert-6-esp" class="cert-frame -c6">
-        <div class="cert-center -f1">
-          <h1 class="">Este premio es para reconocer a</h1>
-        </div>
-        <div class="cert-center -f2">
-          <input
-            placeholder="Nombre del alumno"
-            aria-label="To student"
-            class="student-name -editable"
-          />
-        </div>
-        <p class="for-label">por</p>
-        <div class="cert-center -f3">
-          <h2 class="award-for">Alcanzar su meta semanal de</h2>
-        </div>
-        <div class="cert-center -f4">
-          <input aria-label="asignatura dominada" class="subject -editable" />
-        </div>
-        <div class="date-group form-group">
-          <h3 aria-label="Date awarded" class="date-label">Entregado el</h3>
-          <input aria-label="Date" class="certified -date -editable" />
-        </div>
-        <div class="from-group form-group">
-          <h3 aria-label="Awarded by" class="from-label">Entregado por</h3>
           <input aria-label="Signature" class="certified -from -editable" />
         </div>
         <p class="copyright" role="contentinfo" aria-label="copyright">
