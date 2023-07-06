@@ -7,14 +7,6 @@
     <title>Freckle Certificates</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const countryParam = urlParams.get("country");
-
-      if (countryParam === "uk") {
-        window.location.href = "index-uk.html";
-      } else {
-        window.location.href = "index.html";
-      }
       function showIt(elementId) {
         var el = document.getElementById(elementId);
         el.scrollIntoView({ behavior: "smooth", block: "start" });
