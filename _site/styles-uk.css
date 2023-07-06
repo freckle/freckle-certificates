@@ -1,3 +1,6 @@
+/*
+ * Effra
+ */
 @font-face {
   font-family: "Effra";
   font-weight: normal;
@@ -6,12 +9,35 @@
     url("./fonts/Effra_W_Rg.woff") format("woff");
 }
 
+/*
+ * Nunito
+ */
+@font-face {
+  font-family: Nunito;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local("Nunito Regular"), local("Nunito-Regular"),
+    url("./fonts/nunito-regular.woff2") format("woff2"),
+    url("./fonts/nunito-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Nunito;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local("Nunito Bold"), local("Nunito-Bold"),
+    url("./fonts/nunito-bold.woff2") format("woff2"),
+    url("./fonts/nunito-bold.woff") format("woff");
+}
+
 /* var */
 :root {
   --blue: #2e95d2;
   --pink: #f15c5c;
   --green: #00a38f;
-  --font1: "Effra";
+  --font1: "Nunito";
   --font2: "Effra";
 }
 html {
@@ -137,6 +163,7 @@ header > figure {
 
 /* menu */
 h1.page-title {
+  font-family: var(--font2), sans-serif;
   padding-top: 4%;
 }
 .menu-section {
