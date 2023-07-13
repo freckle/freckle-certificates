@@ -257,6 +257,12 @@ h1.page-title {
   page-break-after: always;
   break-after: always;
 }
+.cert-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
 @-moz-document url-prefix() {
   .cert-frame {
     width: 1008px;
