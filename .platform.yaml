@@ -9,6 +9,7 @@ resources:
     uses: static
     with:
       subDomain: certificates
+      website: true
     platform:
       assets:
         dist: _site
