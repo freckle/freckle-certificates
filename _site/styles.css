@@ -174,13 +174,15 @@ h1.page-title {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 0;
+  margin-bottom: 0;
 }
 .certificate-menu li {
   display: flex;
   justify-content: center;
   list-style: none;
   box-sizing: border-box;
-  padding: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
   margin: 20px 0;
 }
 .certificate-menu li figure {
@@ -270,6 +272,13 @@ h1.page-title {
     break-after: page;
   }
 }
+
+hr.break {
+  width: 10.5in;
+  margin-top: 20px; /* Set the SVG size here */
+  margin-bottom: 40px;
+}
+
 .form-group {
   width: 240px;
   height: 50px;
