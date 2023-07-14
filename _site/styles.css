@@ -396,40 +396,40 @@ hr.break {
 }
 
 /* Certificate Order*/
-#cert-1 {
+#certificate-1 {
   order: 2;
 }
-#cert-2 {
+#certificate-2 {
   order: 3;
 }
-#cert-3 {
+#certificate-3 {
   order: 4;
 }
-#cert-4 {
+#certificate-4 {
   order: 5;
 }
-#cert-5 {
+#certificate-5 {
   order: 6;
 }
-#cert-6 {
+#certificate-6 {
   order: 7;
 }
-#cert-1-esp {
+#certificate-1-esp {
   order: 8;
 }
-#cert-2-esp {
+#certificate-2-esp {
   order: 9;
 }
-#cert-3-esp {
+#certificate-3-esp {
   order: 10;
 }
-#cert-4-esp {
+#certificate-4-esp {
   order: 11;
 }
-#cert-5-esp {
+#certificate-5-esp {
   order: 12;
 }
-#cert-6-esp {
+#certificate-6-esp {
   order: 13;
 }
 /* #cert-1 */
