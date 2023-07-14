@@ -274,12 +274,6 @@ h1.page-title {
   }
 }
 
-hr.break {
-  width: 10.5in;
-  margin-top: 20px; /* Set the SVG size here */
-  margin-bottom: 40px;
-}
-
 .form-group {
   width: 240px;
   height: 50px;
@@ -358,6 +352,12 @@ hr.break {
   color: #146eb3;
   padding-right: 3px;
   padding-left: 3px;
+}
+
+hr.break {
+  width: 10.5in;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 /* Certificate SVG */
