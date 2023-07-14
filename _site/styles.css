@@ -67,10 +67,11 @@ h1 {
   margin: 0;
 }
 h2 {
-  font-family: var(--font1), sans-serif;
-  font-size: 34px;
+  font-family: var(--font2), sans-serif;
+  font-size: 24px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 28.5px;
   margin: 0;
 }
 h3 {
