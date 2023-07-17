@@ -2,6 +2,12 @@
 
 Freckle teacher certificates of achievements for students
 
+## Styling
+
+Styles that are relevant to both the U.K. and the U.S. site should go in `styles.css`.
+
+Each site also has a `styles-??.css` where styling specific to that page go.
+
 ## Print Single Certificate Functionality
 
 The "Print Single Certificate" functionality adds an "onClick" handler to the
