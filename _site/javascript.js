@@ -3,15 +3,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   /* Hide all certificates except the one that was clicked */
   function printSingleCertificate(event) {
-    const currentCertificate = event.target.closest('.certificate');
+    const currentCertificate = event.target.closest(".certificate");
 
-    document.querySelectorAll('.certificate').forEach(certificate => {
+    document.querySelectorAll(".certificate").forEach((certificate) => {
       if (certificate !== currentCertificate) {
-        certificate.classList.add('-no-print');
+        certificate.classList.add("-no-print");
       }
-    })
+    });
 
-    window.print()
+    window.print();
   }
 
   /* Add a note to Safari users */
@@ -21,14 +21,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     /* Please see table:
      * https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#browser_name_and_version
      */
-    const containsSafari = userAgent.includes('Safari');
-    const containsChrome = userAgent.includes('Chrome');
-    const containsChromium = userAgent.includes('Chromium');
+    const containsSafari = userAgent.includes("Safari");
+    const containsChrome = userAgent.includes("Chrome");
+    const containsChromium = userAgent.includes("Chromium");
 
-    const isSafari = containsSafari && !containsChrome && !containsChromium
+    const isSafari = containsSafari && !containsChrome && !containsChromium;
 
     if (isSafari) {
-      document.querySelector('#safari-note').classList.remove('-hidden');
+      document.querySelector("#safari-note").classList.remove("-hidden");
     }
   }
 
@@ -37,15 +37,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
   /* FUNCTION CALLS */
 
   /* Grab all "Print" buttons and add an event listener */
-  document.querySelectorAll('.cert-header button')
-      .forEach(el => el.addEventListener('click', printSingleCertificate));
+  document
+    .querySelectorAll(".cert-header button")
+    .forEach((el) => el.addEventListener("click", printSingleCertificate));
 
   /* Undo the hiding of certificates after printing */
-  window.addEventListener(
-      'afterprint',
-      () => {document.querySelectorAll('.certificate').forEach(certificate => {
-        certificate.classList.remove('-no-print');
-      })})
+  window.addEventListener("afterprint", () => {
+    document.querySelectorAll(".certificate").forEach((certificate) => {
+      certificate.classList.remove("-no-print");
+    });
+  });
 
   /* Add a note to Safari users */
   addSafariNote();
