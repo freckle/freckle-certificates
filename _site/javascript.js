@@ -3,13 +3,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   /* Hide all certificates except the one that was clicked */
   function printSingleCertificate(event) {
-    event.preventDefault();
-
     const currentCertificate = event.target.closest('.certificate');
 
     document.querySelectorAll('.certificate').forEach(certificate => {
       if (certificate !== currentCertificate) {
-        certificate.classList.add('-hidden');
+        certificate.classList.add('-no-print');
       }
     })
 
