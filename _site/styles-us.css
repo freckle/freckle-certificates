@@ -1,0 +1,19 @@
+/* Menu SVG */
+#cert-1-menu .menu-svg {
+  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_work.svg");
+}
+#cert-2-menu .menu-svg {
+  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_progress.svg");
+}
+#cert-3-menu .menu-svg {
+  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-questions_answered.svg");
+}
+#cert-4-menu .menu-svg {
+  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-minutes_practiced.svg");
+}
+#cert-5-menu .menu-svg {
+  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-accuracy.svg");
+}
+#cert-6-menu .menu-svg {
+  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-weekly_goal.svg");
+}

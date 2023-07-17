@@ -152,6 +152,7 @@ header > figure {
   background-size: contain;
   background-repeat: no-repeat;
 }
+/* TODO: Remove this once we get en-gb working */
 #cert-1-menu .menu-svg {
   background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_work.svg");
 }
@@ -170,6 +171,7 @@ header > figure {
 #cert-6-menu .menu-svg {
   background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-weekly_goal.svg");
 }
+/* END TODO */
 
 /* menu */
 h1.page-title {
