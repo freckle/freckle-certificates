@@ -61,16 +61,22 @@ main {
   align-items: center;
 }
 
+/* Display Utilities */
+.-hidden {
+  display: none !important;
+}
+
 /* Typography */
 h1 {
   font-family: var(--font1), sans-serif;
   margin: 0;
 }
 h2 {
-  font-family: var(--font1), sans-serif;
-  font-size: 34px;
+  font-family: var(--font2), sans-serif;
+  font-size: 24px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 28.5px;
   margin: 0;
 }
 h3 {
@@ -101,18 +107,22 @@ header > figure {
   margin: 0;
 }
 
+#safari-note {
+  margin: 0px 70px;
+}
+
 .title-section {
   display: flex;
   justify-content: space-between;
   margin: 0px 70px;
 }
 
-.print-all {
+.print {
   display: flex;
   align-items: flex-end;
 }
 
-.print-all .print-all-button {
+.print .print-button {
   display: flex;
   align-items: center;
   height: 32px;
@@ -126,7 +136,7 @@ header > figure {
   cursor: pointer;
   font-size: 15px;
 }
-.print-all .print-all-span {
+.print .print-span {
   display: flex;
   align-items: center;
 }
@@ -174,13 +184,15 @@ h1.page-title {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 0;
+  margin-bottom: 0;
 }
 .certificate-menu li {
   display: flex;
   justify-content: center;
   list-style: none;
   box-sizing: border-box;
-  padding: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
   margin: 20px 0;
 }
 .certificate-menu li figure {
@@ -257,6 +269,12 @@ h1.page-title {
   page-break-after: always;
   break-after: always;
 }
+.cert-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
 @-moz-document url-prefix() {
   .cert-frame {
     width: 1008px;
@@ -264,6 +282,7 @@ h1.page-title {
     break-after: page;
   }
 }
+
 .form-group {
   width: 240px;
   height: 50px;
@@ -344,6 +363,12 @@ h1.page-title {
   padding-left: 3px;
 }
 
+hr.break {
+  width: 10.5in;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
 /* Certificate SVG */
 /* English */
 #cert-1 {
@@ -380,40 +405,40 @@ h1.page-title {
 }
 
 /* Certificate Order*/
-#cert-1 {
+#certificate-1 {
   order: 2;
 }
-#cert-2 {
+#certificate-2 {
   order: 3;
 }
-#cert-3 {
+#certificate-3 {
   order: 4;
 }
-#cert-4 {
+#certificate-4 {
   order: 5;
 }
-#cert-5 {
+#certificate-5 {
   order: 6;
 }
-#cert-6 {
+#certificate-6 {
   order: 7;
 }
-#cert-1-esp {
+#certificate-1-esp {
   order: 8;
 }
-#cert-2-esp {
+#certificate-2-esp {
   order: 9;
 }
-#cert-3-esp {
+#certificate-3-esp {
   order: 10;
 }
-#cert-4-esp {
+#certificate-4-esp {
   order: 11;
 }
-#cert-5-esp {
+#certificate-5-esp {
   order: 12;
 }
-#cert-6-esp {
+#certificate-6-esp {
   order: 13;
 }
 /* #cert-1 */
@@ -866,7 +891,7 @@ h1.page-title {
   .cert-frame {
     box-shadow: 3px 3px 2px #ddd;
     border: 1px solid #eee;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
   #menu.cert-frame {
     height: auto;
