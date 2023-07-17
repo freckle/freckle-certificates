@@ -61,6 +61,11 @@ main {
   align-items: center;
 }
 
+/* Display Utilities */
+.-hidden {
+  display: none !important;
+}
+
 /* Typography */
 h1 {
   font-family: var(--font1), sans-serif;
@@ -100,6 +105,10 @@ header {
 }
 header > figure {
   margin: 0;
+}
+
+#safari-note {
+  margin: 0px 70px;
 }
 
 .title-section {
