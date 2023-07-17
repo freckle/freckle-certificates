@@ -152,6 +152,7 @@ header > figure {
   background-size: contain;
   background-repeat: no-repeat;
 }
+/* TODO: Remove this once we get en-gb working */
 #cert-1-menu .menu-svg {
   background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_work.svg");
 }
@@ -170,6 +171,7 @@ header > figure {
 #cert-6-menu .menu-svg {
   background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-weekly_goal.svg");
 }
+/* END TODO */
 
 /* menu */
 h1.page-title {
@@ -377,70 +379,19 @@ hr.break {
 #cert-2 {
   background-image: url("certificate-art/Freckle-certificates-letter-v1-great_progress.svg");
 }
+#cert-3 {
+  background-image: url("certificate-art/Freckle-certificates-letter-v1-questions_answered.svg");
+}
+#cert-4 {
+  background-image: url("certificate-art/Freckle-certificates-letter-v1-minutes_practiced.svg");
+}
 #cert-5 {
   background-image: url("certificate-art/Freckle-certificates-letter-v1-accuracy.svg");
 }
-/* Spanish */
-#cert-1-esp {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-great_work-esp.svg");
-}
-#cert-2-esp {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-great_progress-esp.svg");
-}
-#cert-5-esp {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-accuracy-esp.svg");
-}
-/* Shared */
-#cert-3,
-#cert-3-esp {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-questions_answered.svg");
-}
-#cert-4,
-#cert-4-esp {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-minutes_practiced.svg");
-}
-#cert-6,
-#cert-6-esp {
+#cert-6 {
   background-image: url("certificate-art/Freckle-certificates-letter-v1-weekly_goal.svg");
 }
 
-/* Certificate Order*/
-#certificate-1 {
-  order: 2;
-}
-#certificate-2 {
-  order: 3;
-}
-#certificate-3 {
-  order: 4;
-}
-#certificate-4 {
-  order: 5;
-}
-#certificate-5 {
-  order: 6;
-}
-#certificate-6 {
-  order: 7;
-}
-#certificate-1-esp {
-  order: 8;
-}
-#certificate-2-esp {
-  order: 9;
-}
-#certificate-3-esp {
-  order: 10;
-}
-#certificate-4-esp {
-  order: 11;
-}
-#certificate-5-esp {
-  order: 12;
-}
-#certificate-6-esp {
-  order: 13;
-}
 /* #cert-1 */
 .cert-frame.-c1 .cert-center.-f1 {
   height: 0px;
@@ -607,18 +558,6 @@ hr.break {
   font-weight: 700;
   min-height: 50px;
 }
-/* spanish */
-#cert-3-esp .for-label {
-  top: 310px;
-  left: 399px;
-}
-#cert-3-esp .subject span.span-large {
-  transform: translateX(96px);
-}
-#cert-3-esp .subject span.span-small {
-  font-size: 46px;
-}
-
 /* #cert-4 */
 .cert-frame.-c4 .cert-center.-f1 {
   top: 110px;
@@ -686,18 +625,6 @@ hr.break {
   font-weight: 700;
   min-height: 50px;
 }
-/* spanish */
-#cert-4-esp .for-label {
-  top: 310px;
-  left: 399px;
-}
-#cert-4-esp .subject span.span-large {
-  transform: translateX(152px);
-}
-#cert-4-esp .subject span.span-small {
-  font-size: 46px;
-}
-
 /* #cert-5 */
 .cert-frame.-c5 .cert-center.-f1 {
   top: 0px;
@@ -782,19 +709,6 @@ hr.break {
   left: 90px;
   color: grey;
 }
-/* spanish */
-#cert-5-esp .award-for-label {
-  font-size: 36px;
-}
-#cert-5-esp .award-for-label span:first-child {
-  display: inline-block;
-  transform: translateX(-13px);
-}
-#cert-5-esp .award-for-label span:last-child {
-  display: inline-block;
-  transform: translateX(144px);
-}
-
 /* #cert-6 */
 .cert-frame.-c6 .cert-center.-f1 {
   top: 111px;
@@ -858,11 +772,6 @@ hr.break {
   text-align: center;
   font-weight: 700;
   min-height: 40px;
-}
-/* spanish */
-#cert-6-esp .for-label {
-  top: 295px;
-  left: 481px;
 }
 
 /* ani */
