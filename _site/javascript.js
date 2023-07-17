@@ -18,7 +18,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   function addSafariNote() {
     const userAgent = navigator.userAgent;
 
-    /* Please see table: https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#browser_name_and_version */
+    /* Please see table:
+     * https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#browser_name_and_version
+     */
     const containsSafari = userAgent.includes('Safari');
     const containsChrome = userAgent.includes('Chrome');
     const containsChromium = userAgent.includes('Chromium');
@@ -35,16 +37,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
   /* FUNCTION CALLS */
 
   /* Grab all "Print" buttons and add an event listener */
-  document.querySelectorAll('.cert-header button').forEach(el =>
-    el.addEventListener('click', printSingleCertificate)
-  ) ;
+  document.querySelectorAll('.cert-header button')
+      .forEach(el => el.addEventListener('click', printSingleCertificate));
 
   /* Undo the hiding of certificates after printing */
-  window.addEventListener('afterprint', () => {
-    document.querySelectorAll('.certificate').forEach(certificate => {
+  window.addEventListener(
+      'afterprint',
+      () => {document.querySelectorAll('.certificate').forEach(certificate => {
         certificate.classList.remove('-no-print');
-    })
-  })
+      })})
 
   /* Add a note to Safari users */
   addSafariNote();
