@@ -23,9 +23,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     if (isSafari) {
       document.querySelector('#safari-note').classList.remove('-hidden');
-      document
-        .querySelectorAll('.cert-frame')
-        .forEach((el) => el.classList.add('safari'));
+      document.querySelectorAll('.cert-frame')
+          .forEach((el) => el.classList.add('safari'));
     }
   }
 
@@ -48,9 +47,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   /* FUNCTION CALLS */
 
   /* Grab all "Print" buttons and add an event listener */
-  document
-    .querySelectorAll('.cert-header button')
-    .forEach((el) => el.addEventListener('click', printSingleCertificate));
+  document.querySelectorAll('.cert-header button')
+      .forEach((el) => el.addEventListener('click', printSingleCertificate));
 
   /* Undo the hiding of certificates after printing */
   window.addEventListener('afterprint', () => {
