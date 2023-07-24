@@ -540,6 +540,7 @@ hr.break {
 .cert-frame.-c3 .subject {
   font-size: 60px;
   font-weight: 900;
+  line-height: 0.85;
 }
 .cert-frame.-c3 .subject span.span-large {
   display: inline-block;
@@ -548,7 +549,6 @@ hr.break {
 .cert-frame.-c3 .subject span.span-small {
   display: inline-block;
   font-size: 50px;
-  transform: translateY(-37px);
 }
 .cert-frame.-c3 .student-name {
   font-family: var(--font1);
@@ -607,6 +607,7 @@ hr.break {
 .cert-frame.-c4 .subject {
   font-size: 60px;
   font-weight: 900;
+  line-height: 0.85;
 }
 .cert-frame.-c4 .subject span.span-large {
   display: inline-block;
@@ -615,7 +616,6 @@ hr.break {
 .cert-frame.-c4 .subject span.span-small {
   display: inline-block;
   font-size: 50px;
-  transform: translateY(-37px);
 }
 .cert-frame.-c4 .student-name {
   font-family: var(--font1);
