@@ -2,11 +2,11 @@
  * Effra
  */
 @font-face {
-  font-family: "Effra";
+  font-family: 'Effra';
   font-weight: normal;
   font-style: normal;
-  src: local("Effra"), url("./fonts/Effra_W_Rg.woff2") format("woff2"),
-    url("./fonts/Effra_W_Rg.woff") format("woff");
+  src: local('Effra'), url('./fonts/Effra_W_Rg.woff2') format('woff2'),
+    url('./fonts/Effra_W_Rg.woff') format('woff');
 }
 
 /*
@@ -17,9 +17,9 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: local("Nunito Regular"), local("Nunito-Regular"),
-    url("./fonts/nunito-regular.woff2") format("woff2"),
-    url("./fonts/nunito-regular.woff") format("woff");
+  src: local('Nunito Regular'), local('Nunito-Regular'),
+    url('./fonts/nunito-regular.woff2') format('woff2'),
+    url('./fonts/nunito-regular.woff') format('woff');
 }
 
 @font-face {
@@ -27,9 +27,9 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: local("Nunito Bold"), local("Nunito-Bold"),
-    url("./fonts/nunito-bold.woff2") format("woff2"),
-    url("./fonts/nunito-bold.woff") format("woff");
+  src: local('Nunito Bold'), local('Nunito-Bold'),
+    url('./fonts/nunito-bold.woff2') format('woff2'),
+    url('./fonts/nunito-bold.woff') format('woff');
 }
 
 /* var */
@@ -37,8 +37,8 @@
   --blue: #2e95d2;
   --pink: #f15c5c;
   --green: #00a38f;
-  --font1: "Nunito";
-  --font2: "Effra";
+  --font1: 'Nunito';
+  --font2: 'Effra';
 }
 html {
   margin: 0;
@@ -154,22 +154,22 @@ header > figure {
 }
 /* TODO: Remove this once we get en-gb working */
 #cert-1-menu .menu-svg {
-  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_work.svg");
+  background-image: url('certificate-menu-images/Freckle-certificates-menu-v1-great_work.svg');
 }
 #cert-2-menu .menu-svg {
-  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-great_progress.svg");
+  background-image: url('certificate-menu-images/Freckle-certificates-menu-v1-great_progress.svg');
 }
 #cert-3-menu .menu-svg {
-  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-questions_answered.svg");
+  background-image: url('certificate-menu-images/Freckle-certificates-menu-v1-questions_answered.svg');
 }
 #cert-4-menu .menu-svg {
-  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-minutes_practiced.svg");
+  background-image: url('certificate-menu-images/Freckle-certificates-menu-v1-minutes_practiced.svg');
 }
 #cert-5-menu .menu-svg {
-  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-accuracy.svg");
+  background-image: url('certificate-menu-images/Freckle-certificates-menu-v1-accuracy.svg');
 }
 #cert-6-menu .menu-svg {
-  background-image: url("certificate-menu-images/Freckle-certificates-menu-v1-weekly_goal.svg");
+  background-image: url('certificate-menu-images/Freckle-certificates-menu-v1-weekly_goal.svg');
 }
 /* END TODO */
 
@@ -374,22 +374,22 @@ hr.break {
 /* Certificate SVG */
 /* English */
 #cert-1 {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-great_work.svg");
+  background-image: url('certificate-art/Freckle-certificates-letter-v1-great_work.svg');
 }
 #cert-2 {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-great_progress.svg");
+  background-image: url('certificate-art/Freckle-certificates-letter-v1-great_progress.svg');
 }
 #cert-3 {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-questions_answered.svg");
+  background-image: url('certificate-art/Freckle-certificates-letter-v1-questions_answered.svg');
 }
 #cert-4 {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-minutes_practiced.svg");
+  background-image: url('certificate-art/Freckle-certificates-letter-v1-minutes_practiced.svg');
 }
 #cert-5 {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-accuracy.svg");
+  background-image: url('certificate-art/Freckle-certificates-letter-v1-accuracy.svg');
 }
 #cert-6 {
-  background-image: url("certificate-art/Freckle-certificates-letter-v1-weekly_goal.svg");
+  background-image: url('certificate-art/Freckle-certificates-letter-v1-weekly_goal.svg');
 }
 
 /* #cert-1 */
@@ -837,5 +837,229 @@ hr.break {
   :-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: transparent;
+  }
+
+  /* General Safari Print Rules */
+
+  .safari {
+    height: 7.56in;
+    margin: 0;
+    page-break-before: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  .safari-print-single .cert-frame {
+    height: 7.43in;
+  }
+
+  /* Copyrights */
+
+  .safari .copyright {
+    top: 650px;
+    left: 160px;
+  }
+
+  /* Cert 1 */
+
+  .safari#cert-1 .to-label,
+  .safari#cert-1-esp .to-label {
+    top: 273px;
+    left: 143px;
+  }
+  .safari#cert-1 .-f2,
+  .safari#cert-1-esp .-f2 {
+    top: 275px;
+  }
+  .safari#cert-1 .-f3,
+  .safari#cert-1-esp .-f3 {
+    top: 370px;
+  }
+  .safari#cert-1 .-f4,
+  .safari#cert-1-esp .-f4 {
+    top: 420px;
+  }
+  .safari#cert-1 .form-group,
+  .safari#cert-1-esp .form-group {
+    top: 550px;
+  }
+  .safari#cert-1 .date-group,
+  .safari#cert-1-esp .date-group {
+    left: 185px;
+  }
+  .safari#cert-1 .from-group,
+  .safari#cert-1-esp .from-group {
+    left: 585px;
+  }
+
+  /* Cert 2 */
+
+  .safari#cert-2 .to-label,
+  .safari#cert-2-esp .to-label {
+    top: 285px;
+  }
+  .safari#cert-2 .-f2,
+  .safari#cert-2-esp .-f2 {
+    top: 300px;
+  }
+  .safari#cert-2 .-f3,
+  .safari#cert-2-esp .-f3 {
+    top: 390px;
+  }
+  .safari#cert-2 .-f4,
+  .safari#cert-2-esp .-f4 {
+    top: 420px;
+  }
+  .safari#cert-2 .form-group,
+  .safari#cert-2-esp .form-group {
+    top: 550px;
+  }
+  .safari#cert-2 .date-group,
+  .safari#cert-2-esp .date-group {
+    left: 185px;
+  }
+  .safari#cert-2 .from-group,
+  .safari#cert-2-esp .from-group {
+    left: 585px;
+  }
+
+  /* Cert 3 */
+
+  .safari#cert-3 .-f1,
+  .safari#cert-3-esp .-f1 {
+    top: 100px;
+  }
+  .safari#cert-3 .-f2,
+  .safari#cert-3-esp .-f2 {
+    top: 210px;
+  }
+  .safari#cert-3 .for-label,
+  .safari#cert-3-esp .for-label {
+    top: 285px;
+    left: 407px;
+  }
+  .safari#cert-3 .-f3,
+  .safari#cert-3-esp .-f3 {
+    top: 305px;
+  }
+  .safari#cert-3 .-f4,
+  .safari#cert-3-esp .-f4 {
+    top: 410px;
+  }
+  .safari#cert-3 .form-group,
+  .safari#cert-3-esp .form-group {
+    top: 550px;
+  }
+  .safari#cert-3 .date-group,
+  .safari#cert-3-esp .date-group {
+    left: 185px;
+  }
+  .safari#cert-3 .from-group,
+  .safari#cert-3-esp .from-group {
+    left: 585px;
+  }
+
+  /* Cert 4 */
+
+  .safari#cert-4 .-f1,
+  .safari#cert-4-esp .-f1 {
+    top: 90px;
+  }
+  .safari#cert-4 .-f2,
+  .safari#cert-4-esp .-f2 {
+    top: 210px;
+  }
+  .safari#cert-4 .for-label,
+  .safari#cert-4-esp .for-label {
+    top: 285px;
+    left: 407px;
+  }
+  .safari#cert-4 .-f3,
+  .safari#cert-4-esp .-f3 {
+    top: 315px;
+  }
+  .safari#cert-4 .-f4,
+  .safari#cert-4-esp .-f4 {
+    top: 410px;
+  }
+  .safari#cert-4 .form-group,
+  .safari#cert-4-esp .form-group {
+    top: 550px;
+  }
+  .safari#cert-4 .date-group,
+  .safari#cert-4-esp .date-group {
+    left: 185px;
+  }
+  .safari#cert-4 .from-group,
+  .safari#cert-4-esp .from-group {
+    left: 585px;
+  }
+
+  /* Cert 5 */
+
+  .safari#cert-5 .-f2,
+  .safari#cert-5-esp .-f2 {
+    top: 280px;
+  }
+  .safari#cert-5 .-f3,
+  .safari#cert-5-esp .-f3 {
+    top: 380px;
+  }
+  .safari#cert-5 .-f4,
+  .safari#cert-5-esp .-f4 {
+    top: 475px;
+  }
+  .safari#cert-5 .form-group,
+  .safari#cert-5-esp .form-group {
+    top: 550px;
+  }
+  .safari#cert-5 .date-group,
+  .safari#cert-5-esp .date-group {
+    left: 185px;
+  }
+  .safari#cert-5 .from-group,
+  .safari#cert-5-esp .from-group {
+    left: 585px;
+  }
+  .safari#cert-5 .copyright,
+  .safari#cert-5-esp .copyright {
+    top: 660px;
+    left: 120px;
+  }
+
+  /* Cert 6 */
+
+  .safari#cert-6 .-f1,
+  .safari#cert-6-esp .-f1 {
+    top: 100px;
+  }
+  .safari#cert-6 .-f2,
+  .safari#cert-6-esp .-f2 {
+    top: 190px;
+  }
+  .safari#cert-6 .for-label,
+  .safari#cert-6-esp .for-label {
+    top: 275px;
+  }
+  .safari#cert-6 .-f3,
+  .safari#cert-6-esp .-f3 {
+    top: 320px;
+    left: 15px;
+  }
+  .safari#cert-6 .-f4,
+  .safari#cert-6-esp .-f4 {
+    top: 410px;
+  }
+  .safari#cert-6 .form-group,
+  .safari#cert-6-esp .form-group {
+    top: 550px;
+  }
+  .safari#cert-6 .date-group,
+  .safari#cert-6-esp .date-group {
+    left: 185px;
+  }
+  .safari#cert-6 .from-group,
+  .safari#cert-6-esp .from-group {
+    left: 585px;
   }
 }
