@@ -60,6 +60,22 @@ main {
   justify-content: center;
   align-items: center;
 }
+footer {
+  text-align: center;
+  padding: 20px;
+  font-family: var(--font1), sans-serif;
+}
+footer span {
+  color: #323232;
+}
+footer a {
+  color: #1463b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+.copyright-footer {
+  padding-right: 10px;
+}
 
 /* Display Utilities */
 .-hidden {

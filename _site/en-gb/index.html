@@ -1,6 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Start Ketch (CMS) -->
+    <script>
+      !(function () {
+        (window.semaphore = window.semaphore || []),
+          (window.ketch = function () {
+            window.semaphore.push(arguments);
+          });
+        var e = new URLSearchParams(document.location.search),
+          o = e.has('property') ? e.get('property') : 'freckle_certificates',
+          n = document.createElement('script');
+        (n.type = 'text/javascript'),
+          (n.src =
+            'https://global.ketchcdn.com/web/v2/config/renaissance_learning/'.concat(
+              o,
+              '/boot.js'
+            )),
+          (n.defer = n.async = !0),
+          document.getElementsByTagName('head')[0].appendChild(n);
+      })();
+    </script>
+    <!-- End Ketch (CMS) -->
+
+    <!-- Start Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GG4E30GFR5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-GG4E30GFR5');
+    </script>
+    <!-- End Google tag (gtag.js) -->
+
+    <!-- Start Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PFMJCVWP');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,7 +62,7 @@
     <script>
       function showIt(elementId) {
         var el = document.getElementById(elementId);
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return false;
       }
     </script>
@@ -30,7 +82,11 @@
     <main>
       <div id="menu" class="menu-section -no-print">
         <aside id="safari-note" class="-hidden">
-          <p>Certificates may not print well using the Safari browser. For the best results, please print on the latest version of the Chrome browser.</p>
+          <p>
+            Certificates may not print well using the Safari browser. For the
+            best results, please print on the latest version of the Chrome
+            browser.
+          </p>
         </aside>
         <div class="title-section">
           <h1 class="page-title">Freckle Certificates</h1>
@@ -40,6 +96,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-all-button"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -71,6 +128,7 @@
                 aria-label="Printable certificate for 'Great Work'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-1')"
+                data-ga-track="cert-1-uk"
               ></figure>
             </div>
           </li>
@@ -80,6 +138,7 @@
                 aria-label="Printable certificate for 'Great Progress'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-2')"
+                data-ga-track="cert-2-uk"
               ></figure>
             </div>
           </li>
@@ -89,6 +148,7 @@
                 aria-label="Printable certificate of 'Questions answered correctly!'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-3')"
+                data-ga-track="cert-3-uk"
               ></figure>
             </div>
           </li>
@@ -98,6 +158,7 @@
                 aria-label="Printable certificate of 'Minutes Practing'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-4')"
+                data-ga-track="cert-4-uk"
               ></figure>
             </div>
           </li>
@@ -107,6 +168,7 @@
                 aria-label="Printable certificate of 'Accuracy'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-5')"
+                data-ga-track="cert-5-uk"
               ></figure>
             </div>
           </li>
@@ -116,6 +178,7 @@
                 aria-label="Printable certificate of 'Weekly Target'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-6')"
+                data-ga-track="cert-6-uk"
               ></figure>
             </div>
           </li>
@@ -132,6 +195,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-cert-1-uk"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -199,6 +263,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-cert-2-uk"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -266,6 +331,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-cert-3-uk"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -342,6 +408,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-cert-4-uk"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -418,6 +485,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-cert-5-uk"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -493,6 +561,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-cert-6-uk"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -554,4 +623,16 @@
     </main>
     <script src="../javascript.js"></script>
   </body>
+  <footer class="footer">
+    <p>
+      <span class="copyright-footer"
+        >©2023 Renaissance Learning, Inc. All rights reserved.</span
+      >
+      <a href="https://www.renaissance.com/privacy/">Privacy hub</a>
+      <span>|</span>
+      <a href="#" onclick="semaphore.push(['showPreferences'])"
+        >Privacy settings</a
+      >
+    </p>
+  </footer>
 </html>
