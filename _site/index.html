@@ -1,6 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Start Ketch (CMS) -->
+    <script>
+      !(function () {
+        (window.semaphore = window.semaphore || []),
+          (window.ketch = function () {
+            window.semaphore.push(arguments);
+          });
+        var e = new URLSearchParams(document.location.search),
+          o = e.has('property') ? e.get('property') : 'freckle_certificates',
+          n = document.createElement('script');
+        (n.type = 'text/javascript'),
+          (n.src =
+            'https://global.ketchcdn.com/web/v2/config/renaissance_learning/'.concat(
+              o,
+              '/boot.js'
+            )),
+          (n.defer = n.async = !0),
+          document.getElementsByTagName('head')[0].appendChild(n);
+      })();
+    </script>
+    <!-- End Ketch (CMS) -->
+
+    <!-- Start Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GG4E30GFR5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-GG4E30GFR5');
+    </script>
+    <!-- End Google tag (gtag.js) -->
+
+    <!-- Start Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PFMJCVWP');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,13 +62,24 @@
     <link rel="stylesheet" type="text/css" href="styles-us.css" />
     <script>
       function showIt(elementId) {
-        var el = document.getElementById(elementId)
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        return false
+        var el = document.getElementById(elementId);
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return false;
       }
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PFMJCVWP"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header class="-no-print">
       <figure>
         <img
@@ -44,6 +107,7 @@
               type="button"
               name="print"
               class="print-button"
+              data-ga-track="print-all-button"
             >
               <span color="print-span">
                 <span class="icon-span">
@@ -75,17 +139,20 @@
                 aria-label="Printable certificate for 'Great Work'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-1')"
+                data-ga-track="cert-1"
               ></figure>
               <p class="lang-section">
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-1')"
+                  data-ga-track="cert-1"
                   >English</span
                 >
                 |
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-1-esp')"
+                  data-ga-track="cert-1-esp"
                   >Español</span
                 >
               </p>
@@ -97,17 +164,20 @@
                 aria-label="Printable certificate for 'Great Progress'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-2')"
+                data-ga-track="cert-2"
               ></figure>
               <p class="lang-section">
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-2')"
+                  data-ga-track="cert-2"
                   >English</span
                 >
                 |
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-2-esp')"
+                  data-ga-track="cert-2-esp"
                   >Español</span
                 >
               </p>
@@ -119,17 +189,20 @@
                 aria-label="Printable certificate of 'Questions answered correctly!'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-3')"
+                data-ga-track="cert-3"
               ></figure>
               <p class="lang-section">
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-3')"
+                  data-ga-track="cert-3"
                   >English</span
                 >
                 |
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-3-esp')"
+                  data-ga-track="cert-3-esp"
                   >Español</span
                 >
               </p>
@@ -141,17 +214,20 @@
                 aria-label="Printable certificate of 'Minutes Practiced'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-4')"
+                data-ga-track="cert-4"
               ></figure>
               <p class="lang-section">
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-4')"
+                  data-ga-track="cert-4"
                   >English</span
                 >
                 |
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-4-esp')"
+                  data-ga-track="cert-4-esp"
                   >Español</span
                 >
               </p>
@@ -163,17 +239,20 @@
                 aria-label="Printable certificate of 'Accuracy'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-5')"
+                data-ga-track="cert-5"
               ></figure>
               <p class="lang-section">
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-5')"
+                  data-ga-track="cert-5"
                   >English</span
                 >
                 |
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-5-esp')"
+                  data-ga-track="cert-5-esp"
                   >Español</span
                 >
               </p>
@@ -185,17 +264,20 @@
                 aria-label="Printable certificate of 'Weekly Goal'"
                 class="menu-svg -pointer-true"
                 onclick="showIt('cert-6')"
+                data-ga-track="cert-6"
               ></figure>
               <p class="lang-section">
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-6')"
+                  data-ga-track="cert-6"
                   >English</span
                 >
                 |
                 <span
                   class="-pointer-true lang-links"
                   onclick="showIt('cert-6-esp')"
+                  data-ga-track="cert-6-esp"
                   >Español</span
                 >
               </p>
@@ -210,7 +292,12 @@
         <div class="cert-header -no-print">
           <h2>Great Work</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-1"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -271,7 +358,12 @@
         <div class="cert-header -no-print">
           <h2>Buen Trabajo</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-1-esp"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -334,7 +426,12 @@
         <div class="cert-header -no-print">
           <h2>Great Progress</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-2"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -395,7 +492,12 @@
         <div class="cert-header -no-print">
           <h2>Gran Progreso</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-2-esp"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -458,7 +560,12 @@
         <div class="cert-header -no-print">
           <h2>Questions Answered Correctly</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-3"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -528,7 +635,12 @@
         <div class="cert-header -no-print">
           <h2>Preguntas Respondidas Correctamente</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-3-esp"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -600,7 +712,12 @@
         <div class="cert-header -no-print">
           <h2>Minutes Practiced</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-4"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -670,7 +787,12 @@
         <div class="cert-header -no-print">
           <h2>Minutos Practicados</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-4-esp"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -742,7 +864,12 @@
         <div class="cert-header -no-print">
           <h2>Amazing Accuracy</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-5"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -811,7 +938,12 @@
         <div class="cert-header -no-print">
           <h2>Premio de Exactitud Asombrosa</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-5-esp"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -882,7 +1014,12 @@
         <div class="cert-header -no-print">
           <h2>Weekly Goal</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-6"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -943,7 +1080,12 @@
         <div class="cert-header -no-print">
           <h2>Meta Semanal</h2>
           <div class="print -no-print">
-            <button type="button" name="print" class="print-button">
+            <button
+              type="button"
+              name="print"
+              class="print-button"
+              data-ga-track="print-cert-6-esp"
+            >
               <span color="print-span">
                 <span class="icon-span">
                   <svg
@@ -1004,4 +1146,16 @@
     </main>
     <script src="javascript.js"></script>
   </body>
+  <footer class="footer">
+    <p>
+      <span class="copyright-footer"
+        >©2023 Renaissance Learning, Inc. All rights reserved.</span
+      >
+      <a href="https://www.renaissance.com/privacy/">Privacy hub</a>
+      <span>|</span>
+      <a href="#" onclick="semaphore.push(['showPreferences'])"
+        >Privacy settings</a
+      >
+    </p>
+  </footer>
 </html>
