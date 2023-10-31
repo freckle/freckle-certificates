@@ -53,7 +53,7 @@ body {
   color-adjust: exact !important;
   print-color-adjust: exact !important;
 }
-main {
+.main {
   position: relative;
   display: flex;
   flex-direction: column;
