@@ -10,7 +10,7 @@ Each site also has a `styles-??.css` where styling specific to that page go.
 
 ## Print Single Certificate Functionality
 
-The "Print Single Certificate" functionality adds an "onClick" handler to the
+The "Print Single Certificate" functionality adds an `onClick` handler to the
 "Print" button of each certificate.
 
 The handler hides all other certificates using `display: none` (via the
