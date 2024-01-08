@@ -1,6 +1,6 @@
 # freckle-certificates
 
-Freckle printable teacher certificates of achievements for students.
+Printable Freckle teacher certificates of achievements for students.
 
 ## Styling
 
