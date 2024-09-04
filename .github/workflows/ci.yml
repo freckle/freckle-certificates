@@ -16,10 +16,9 @@ jobs:
     environment: assets
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
-          # This is an Org-level variable you can always assume exists
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: ${{ vars.AWS_ROLE }}
 
@@ -27,8 +26,8 @@ jobs:
       - id: setup
         uses: freckle/setup-platform-action@v7
         with:
-          # This is an Org-level secret you can always assume exists
-          token: ${{ secrets.FRECKLE_AUTOMATION_GITHUB_TOKEN }}
+          github-app-id: ${{ vars.FRECKLE_AUTOMATION_APP_ID }}
+          github-app-private-key: ${{ secrets.FRECKLE_AUTOMATION_APP_PRIVATE_KEY }}
 
       - run: platform assets:push --tag "${{ steps.setup.outputs.tag }}"
 
@@ -49,8 +48,8 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: ${{ vars.AWS_ROLE }}
@@ -62,7 +61,8 @@ jobs:
       - id: setup
         uses: freckle/setup-platform-action@v7
         with:
-          token: ${{ secrets.FRECKLE_AUTOMATION_GITHUB_TOKEN }}
+          github-app-id: ${{ vars.FRECKLE_AUTOMATION_APP_ID }}
+          github-app-private-key: ${{ secrets.FRECKLE_AUTOMATION_APP_PRIVATE_KEY }}
           environment: ${{ matrix.env }}
 
       - run: platform deploy --tag "${{ steps.setup.outputs.tag }}" --no-confirm
