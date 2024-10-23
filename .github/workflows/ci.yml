@@ -62,7 +62,7 @@ jobs:
         uses: freckle/setup-platform-action@v7
         with:
           github-app-id: ${{ vars.FRECKLE_AUTOMATION_APP_ID }}
-          github-app-private-key: ${{ secrets.FRECKLE_AUTOMATION_APP_PRIVATE_KEY }}
+          github-app-private-key: ${{ secrets.FRECKLE_AUTOMATION_PRIVATE_KEY }}
           environment: ${{ matrix.env }}
 
       - run: platform deploy --tag "${{ steps.setup.outputs.tag }}" --no-confirm
